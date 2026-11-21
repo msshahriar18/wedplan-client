@@ -67,7 +67,7 @@ export function ServiceFilters({ initial }: { initial: FilterValues }) {
           <Input
             value={values.search}
             onChange={(e) => setValues({ ...values, search: e.target.value })}
-            placeholder="Search by name, vendor or keyword"
+            placeholder="Search services or vendors"
             aria-label="Search services"
             className="h-11 pl-9"
           />

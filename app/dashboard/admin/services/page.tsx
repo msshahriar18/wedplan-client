@@ -62,7 +62,7 @@ export default async function ManageServicesPage({
             <TableHeader>
               <TableRow className="bg-muted/50 hover:bg-muted/50">
                 <TableHead className="pl-5">Service</TableHead>
-                <TableHead>Vendor</TableHead>
+                <TableHead className="hidden xl:table-cell">Vendor</TableHead>
                 <TableHead>Price</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead className="pr-5 text-right">Actions</TableHead>
@@ -78,14 +78,17 @@ export default async function ManageServicesPage({
                       </div>
                       <div className="min-w-0">
                         {service.status === "approved" && service.isAvailable ? (
-                          <Link href={`/services/${service._id}`} className="block max-w-[16rem] truncate font-medium hover:text-primary">
+                          <Link href={`/services/${service._id}`} className="block max-w-[14rem] truncate font-medium hover:text-primary">
                             {service.serviceName}
                           </Link>
                         ) : (
-                          <p className="max-w-[16rem] truncate font-medium">{service.serviceName}</p>
+                          <p className="max-w-[14rem] truncate font-medium">{service.serviceName}</p>
                         )}
                         <p className="text-xs text-muted-foreground">
                           {service.category} · {service.location}
+                        </p>
+                        <p className="text-xs text-muted-foreground xl:hidden">
+                          by {vendorDisplayName(service.vendor)}
                         </p>
                         <p className="text-xs text-muted-foreground">
                           Submitted {formatDate(service.createdAt)}
@@ -94,7 +97,7 @@ export default async function ManageServicesPage({
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="hidden xl:table-cell">
                     <p className="max-w-[10rem] truncate text-sm font-medium">{vendorDisplayName(service.vendor)}</p>
                     <p className="max-w-[10rem] truncate text-xs text-muted-foreground">{service.vendor?.email}</p>
                   </TableCell>
