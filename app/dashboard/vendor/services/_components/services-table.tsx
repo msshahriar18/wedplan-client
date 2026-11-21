@@ -102,7 +102,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
   return (
     <>
       {/* desktop */}
-      <div className="hidden overflow-hidden rounded-2xl border bg-card md:block">
+      <div className="hidden overflow-hidden rounded-2xl border bg-card xl:block">
         <Table>
           <TableHeader>
             <TableRow className="bg-muted/50 hover:bg-muted/50">
@@ -149,7 +149,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
       </div>
 
       {/* mobile */}
-      <div className="grid gap-4 md:hidden">
+      <div className="grid gap-4 sm:grid-cols-2 xl:hidden">
         {services.map((service) => (
           <div key={service._id} className="rounded-2xl border bg-card p-4">
             <div className="flex gap-3">
