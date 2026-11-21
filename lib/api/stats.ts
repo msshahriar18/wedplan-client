@@ -39,3 +39,19 @@ export type AdminStats = {
 export const getCustomerStats = () => authFetch<CustomerStats>("/stats/customer")
 export const getVendorStats = () => authFetch<VendorStats>("/stats/vendor")
 export const getAdminStats = () => authFetch<AdminStats>("/stats/admin")
+
+export type BillingInfo = {
+  plan: "free" | "premium"
+  subscriptionExpiresAt: string | null
+  cancelAtPeriodEnd: boolean
+  transactions: {
+    _id: string
+    plan: string
+    amount: number
+    currency: string
+    status: string
+    createdAt: string
+  }[]
+}
+
+export const getBillingInfo = () => authFetch<BillingInfo>("/payments/my")
