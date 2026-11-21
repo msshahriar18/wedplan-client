@@ -4,7 +4,7 @@ import { ArrowRight, CalendarHeart, Clock, LayoutGrid, Receipt, Store, UserRound
 
 import { PageHeader } from "@/components/dashboard/page-header"
 import { StatCard } from "@/components/dashboard/stat-card"
-import { getAdminStats } from "@/lib/api/stats"
+import { getAdminStats } from "@/lib/api/dashboard"
 import { formatPrice } from "@/lib/formatters"
 
 export const metadata: Metadata = { title: "Admin Dashboard" }

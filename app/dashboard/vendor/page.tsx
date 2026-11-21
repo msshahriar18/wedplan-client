@@ -5,7 +5,7 @@ import { CalendarCheck, CalendarClock, Crown, LayoutGrid, Plus, Zap } from "luci
 import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/dashboard/page-header"
 import { StatCard } from "@/components/dashboard/stat-card"
-import { getVendorStats } from "@/lib/api/stats"
+import { getVendorStats } from "@/lib/api/dashboard"
 import { requireRole } from "@/lib/core/server"
 import { formatDate } from "@/lib/formatters"
 

@@ -1,6 +1,7 @@
 import "server-only"
 import { authFetch } from "@/lib/core/server"
 import type { Booking } from "@/lib/types/booking"
+import type { Profile } from "@/lib/types/user"
 
 export type CustomerStats = {
   total: number
@@ -55,3 +56,5 @@ export type BillingInfo = {
 }
 
 export const getBillingInfo = () => authFetch<BillingInfo>("/payments/my")
+
+export const getMyProfile = () => authFetch<Profile>("/users/me")

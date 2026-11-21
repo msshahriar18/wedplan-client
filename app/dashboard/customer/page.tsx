@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/dashboard/page-header"
 import { StatCard } from "@/components/dashboard/stat-card"
 import { StatusBadge } from "@/components/shared/status-badge"
-import { getCustomerStats } from "@/lib/api/stats"
+import { getCustomerStats } from "@/lib/api/dashboard"
 import { requireRole } from "@/lib/core/server"
 import { formatDate } from "@/lib/formatters"
 
