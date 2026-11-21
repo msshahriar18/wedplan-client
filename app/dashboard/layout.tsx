@@ -2,13 +2,11 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/s
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 import { UserMenu } from "@/components/layout/user-menu"
 import { requireUser } from "@/lib/core/server"
-import type { UserRole } from "@/lib/types/user"
+import { isPremiumActive, type UserRole } from "@/lib/types/user"
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const user = await requireUser()
-  const isPremium =
-    user.subscriptionPlan === "premium" &&
-    (!user.subscriptionExpiresAt || new Date(user.subscriptionExpiresAt) > new Date())
+  const isPremium = isPremiumActive(user)
 
   const sidebarUser = {
     name: user.name,

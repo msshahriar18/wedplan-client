@@ -49,3 +49,10 @@ export const dashboardPath = (role?: string | null) => {
   if (role === "vendor") return "/dashboard/vendor"
   return "/dashboard/customer"
 }
+
+export const isPremiumActive = (user?: {
+  subscriptionPlan?: string | null
+  subscriptionExpiresAt?: string | Date | null
+} | null) =>
+  user?.subscriptionPlan === "premium" &&
+  (!user.subscriptionExpiresAt || new Date(user.subscriptionExpiresAt) > new Date())
