@@ -86,9 +86,9 @@ export const protectedMutation = async <T>(
   }
 }
 
-// public GET, no token needed
-export const publicFetch = async <T>(path: string, revalidate = 60): Promise<T> => {
-  const res = await fetch(`${API_URL}${path}`, { next: { revalidate } })
+// public GET, no token needed. Always fresh so newly approved services show up right away
+export const publicFetch = async <T>(path: string): Promise<T> => {
+  const res = await fetch(`${API_URL}${path}`, { cache: "no-store" })
   if (!res.ok) throw new Error(await readMessage(res))
   return res.json()
 }

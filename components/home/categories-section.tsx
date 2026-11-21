@@ -23,7 +23,7 @@ export function CategoriesSection({ counts }: { counts: CategoryCount[] }) {
               <StaggerItem key={category.name}>
                 <Link
                   href={categoryHref(category.name)}
-                  className="group relative flex h-64 flex-col justify-end overflow-hidden rounded-2xl p-6 text-white"
+                  className="group relative isolate flex h-64 flex-col justify-end overflow-hidden rounded-2xl p-6 text-white"
                 >
                   <Image
                     src={category.image}

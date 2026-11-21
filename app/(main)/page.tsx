@@ -7,6 +7,9 @@ import { VendorCta } from "@/components/home/vendor-cta"
 import { WhyChoose } from "@/components/home/why-choose"
 import { getCategoryCounts, getFeaturedServices } from "@/lib/api/services"
 
+// rendered on each request so featured services are never stale
+export const dynamic = "force-dynamic"
+
 export default async function HomePage() {
   const [featured, counts] = await Promise.all([getFeaturedServices(), getCategoryCounts()])
 

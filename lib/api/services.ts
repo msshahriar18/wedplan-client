@@ -3,11 +3,11 @@ import { API_URL, authFetch, publicFetch } from "@/lib/core/server"
 import type { CategoryCount, Service, ServiceListResponse } from "@/lib/types/service"
 
 export const getServices = (query: string) =>
-  publicFetch<ServiceListResponse>(`/services?${query}`, 30)
+  publicFetch<ServiceListResponse>(`/services?${query}`)
 
 export const getFeaturedServices = async () => {
   try {
-    return await publicFetch<Service[]>("/services/featured", 60)
+    return await publicFetch<Service[]>("/services/featured")
   } catch {
     return []
   }
@@ -15,7 +15,7 @@ export const getFeaturedServices = async () => {
 
 export const getCategoryCounts = async () => {
   try {
-    return await publicFetch<CategoryCount[]>("/services/categories", 120)
+    return await publicFetch<CategoryCount[]>("/services/categories")
   } catch {
     return []
   }
