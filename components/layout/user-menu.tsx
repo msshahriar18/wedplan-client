@@ -56,11 +56,9 @@ export function UserMenu({ user }: { user: MenuUser }) {
         <DropdownMenuItem render={<Link href={base} />} className="py-2">
           <LayoutDashboard /> Dashboard
         </DropdownMenuItem>
-        {user.role !== "admin" ? (
-          <DropdownMenuItem render={<Link href={`${base}/profile`} />} className="py-2">
-            <Settings /> Profile Settings
-          </DropdownMenuItem>
-        ) : null}
+        <DropdownMenuItem render={<Link href={`${base}/profile`} />} className="py-2">
+          <Settings /> Profile Settings
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive" onClick={logout} className="py-2">
           <LogOut /> Logout

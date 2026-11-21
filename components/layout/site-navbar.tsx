@@ -114,14 +114,12 @@ export function SiteNavbar() {
                   >
                     <LayoutDashboard className="size-4" /> Dashboard
                   </Link>
-                  {user.role !== "admin" ? (
-                    <Link
-                      href={`${dashboardPath(user.role)}/profile`}
-                      className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted"
-                    >
-                      <Settings className="size-4" /> Profile Settings
-                    </Link>
-                  ) : null}
+                  <Link
+                    href={`${dashboardPath(user.role)}/profile`}
+                    className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted"
+                  >
+                    <Settings className="size-4" /> Profile Settings
+                  </Link>
                   <button
                     onClick={logout}
                     className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-destructive hover:bg-destructive/10"

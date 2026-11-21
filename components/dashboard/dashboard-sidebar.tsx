@@ -55,6 +55,7 @@ const NAV_BY_ROLE: Record<UserRole, NavItem[]> = {
     { label: "Manage Users", href: "/dashboard/admin/users", icon: Users },
     { label: "Manage Services", href: "/dashboard/admin/services", icon: LayoutGrid },
     { label: "Transactions", href: "/dashboard/admin/transactions", icon: Receipt },
+    { label: "Profile Settings", href: "/dashboard/admin/profile", icon: Settings },
   ],
 }
 
