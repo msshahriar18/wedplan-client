@@ -101,7 +101,14 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center justify-between gap-2 py-5 text-xs sm:flex-row">
           <p>&copy; {new Date().getFullYear()} WedPlan. All rights reserved.</p>
-          <p>Made with care for couples and wedding pros.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-gold">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-gold">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
