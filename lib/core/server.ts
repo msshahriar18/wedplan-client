@@ -4,6 +4,7 @@ import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 import { SignJWT } from "jose"
 import { auth } from "@/lib/auth"
+import { connectDB } from "@/lib/db"
 import { dashboardPath, type UserRole } from "@/lib/types/user"
 
 export const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000"
@@ -16,6 +17,7 @@ export type ActionResult<T = null> =
 
 // cached per request, so layouts and pages can both call it for free
 export const getSession = cache(async () => {
+  await connectDB()
   return auth.api.getSession({ headers: await headers() })
 })
 
