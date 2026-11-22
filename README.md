@@ -2,9 +2,9 @@
 
 WedPlan is a wedding marketplace where couples find wedding vendors and send booking requests, vendors publish and manage their services, and admins keep the platform clean. This repo is the Next.js frontend.
 
-- **Live site:** https://your-live-site-link.vercel.app
-- **Client repo:** https://github.com/your-username/wedplan-client
-- **Server repo:** https://github.com/your-username/wedplan-server
+- **Live site:** https://wedplan-client-theta.vercel.app
+- **Client repo:** https://github.com/msshahriar18/wedplan-client
+- **Server repo:** https://github.com/msshahriar18/wedplan-server
 
 ## Features
 
@@ -49,7 +49,7 @@ Better Auth runs inside Next.js and keeps the session in a cookie. When a page o
 1. Clone and install
 
    ```bash
-   git clone https://github.com/your-username/wedplan-client.git
+   git clone https://github.com/msshahriar18/wedplan-client.git
    cd wedplan-client
    npm install
    ```
